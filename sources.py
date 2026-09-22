@@ -17,13 +17,3 @@ class Sources:
     def get_sudo_story(self):
         # todo
         pass
-
-if __name__ == "__main__":
-    html_list = Sources("").get_simplify_readme()
-    html = html_list[0]
-    data = parser.extract_simplify_postings(html)
-    previous_company = None
-    for position in data:
-        information = parser.get_position_information(position)
-        previous_company = information["company"]
-        print(information)

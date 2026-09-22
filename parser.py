@@ -8,7 +8,7 @@ def extract_simplify_postings(html):
 
     return data[1:]
 
-def get_position_information(position, previous_company = None):
+def get_position_information(position, previous_company):
     soup = BeautifulSoup(str(position), "html.parser")
     table_data = soup.find_all("td")
     if len(table_data) < 5:
@@ -20,5 +20,5 @@ def get_position_information(position, previous_company = None):
         "role": table_data[1].get_text(),
         "location": table_data[2].get_text(),
         "link": table_data[3].find("a").get("href"),
-        "days_posted": table_data[-1].get_text()
+        "days_posted": int(table_data[-1].get_text()[:1])
     }
