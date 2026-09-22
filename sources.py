@@ -26,4 +26,4 @@ if __name__ == "__main__":
     for position in data:
         information = parser.get_position_information(position)
         previous_company = information["company"]
-        print(information)
+        print(information, "test")
