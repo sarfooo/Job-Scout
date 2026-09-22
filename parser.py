@@ -8,8 +8,8 @@ def extract_simplify_postings(html):
 
     return data[1:]
 
-def get_position_information(html, previous_company = None):
-    soup = BeautifulSoup(str(html), "html.parser")
+def get_position_information(position, previous_company = None):
+    soup = BeautifulSoup(str(position), "html.parser")
     table_data = soup.find_all("td")
     if len(table_data) < 5:
         return None
