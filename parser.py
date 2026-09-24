@@ -1,6 +1,12 @@
+import re
+
 from bs4 import BeautifulSoup
 
-def extract_simplify_postings(html):
+def extract_position_table(text):
+    tables = re.findall(r"<table\b[^>]*>[\s\S]*?<\/table>", text)[0]
+    return tables
+
+def extract_position_rows(html):
     soup = BeautifulSoup(html, "html.parser")
     data = soup.find_all("tr")
     if not data:
