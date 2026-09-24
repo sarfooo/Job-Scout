@@ -12,10 +12,14 @@ class Fetcher:
         self.source = Sources(self.session_id)
 
     def fetch_simplify_internships(self):
+        positions = []
+        previous_company = None
+
         html = self.source.get_simplify_readme()
         postings = parser.extract_simplify_postings(html)
-        previous_company = None
-        positions = []
+        if postings is None:
+            # Logging should go here
+            return
 
         for position in postings:
             position_information = parser.get_position_information(position, previous_company)

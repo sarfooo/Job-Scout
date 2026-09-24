@@ -12,7 +12,7 @@ def get_position_information(position, previous_company):
     soup = BeautifulSoup(str(position), "html.parser")
     table_data = soup.find_all("td")
     if len(table_data) < 5:
-        return None
+        return 
 
     company = table_data[0].find("a")
     return {
