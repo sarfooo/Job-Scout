@@ -6,8 +6,8 @@ def extract_position_table(text):
     tables = re.findall(r"<table\b[^>]*>[\s\S]*?<\/table>", text)[0]
     return tables
 
-def extract_position_rows(html):
-    soup = BeautifulSoup(html, "html.parser")
+def extract_position_rows(tables):
+    soup = BeautifulSoup(tables, "html.parser")
     data = soup.find_all("tr")
     if not data:
         return None

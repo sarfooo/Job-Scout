@@ -10,15 +10,14 @@ class Collecter:
     def get_simplify_positions(self):
         body = self.source.get_simplify_readme()
 
-        html = parser.extract_position_table(body)
+        tables = parser.extract_position_table(body)
 
-        positions = parser.extract_position_rows(html)
+        positions = parser.extract_position_rows(tables)
 
         return positions
 
     def get_sudo_stories(self):
         pass
-
 
 
 
