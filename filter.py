@@ -3,7 +3,7 @@ class Filter:
         self._max_posting_age = max_posting_age
         self._database_connection = None # Setup postgresql connection
 
-    def filter_positions(self, positions):
+    def filter_simplify_positions(self, positions):
         # Filter positions based post age
         positions = filter(lambda position: position["days_posted"] <= self._max_posting_age, positions)
 
@@ -12,6 +12,6 @@ class Filter:
 
         return positions
 
-    def position_exists(position):
+    def simplify_position_exists(position):
         # databae code goes in ehre
         pass

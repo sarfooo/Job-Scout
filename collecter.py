@@ -4,15 +4,15 @@ import parser
 from sources import Sources
 
 class Collecter:
-    def __init__(self, session_id):
+    def __init__(self, session_id = None):
         self.source = Sources(session_id)
 
     def get_simplify_positions(self):
         body = self.source.get_simplify_readme()
 
-        tables = parser.extract_position_table(body)
+        tables = parser.extract_simplify_position_table(body)
 
-        positions = parser.extract_position_rows(tables)
+        positions = parser.extract_simplify_position_rows(tables)
 
         return positions
 
