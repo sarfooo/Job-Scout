@@ -9,7 +9,6 @@ class Filter:
 
         # Check if positions are stored already in database
         # positions = filter(self.position_exists, positions)
-
         return positions
 
     def simplify_position_exists(position):
